@@ -4,8 +4,6 @@ import 'package:who_is_the_king_core/src/gamefield/objects/base/attack.dart';
 import 'package:who_is_the_king_core/src/gamefield/objects/base/character.dart';
 
 class Zok extends Character {
-  Zok({required super.position, required super.orientation});
-
   @override
   String get name => 'ZOK';
 

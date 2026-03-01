@@ -1,23 +1,15 @@
-import 'package:flame/components.dart';
-import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
+import 'package:who_is_the_king_ui/src/screens/start_screen.dart';
 
 void main() {
-  runApp(GameWidget(game: FlameGame(world: MyWorld())));
+  runApp(const WhoIsTheKingGame());
 }
 
-class MyWorld extends World {
-  @override
-  Future<void> onLoad() async {
-    add(Player(position: Vector2(0, 0)));
-  }
-}
-
-class Player extends SpriteComponent {
-  Player({super.position}) : super(size: Vector2.all(200), anchor: Anchor.center);
+class WhoIsTheKingGame extends StatelessWidget {
+  const WhoIsTheKingGame({super.key});
 
   @override
-  Future<void> onLoad() async {
-    sprite = await Sprite.load('trex.png');
+  Widget build(BuildContext context) {
+    return MaterialApp(debugShowCheckedModeBanner: false, home: const StartScreen());
   }
 }

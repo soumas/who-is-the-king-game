@@ -1,8 +1,7 @@
-import 'package:who_is_the_king_core/src/gamefield/objects/base/attack.dart';
-import 'package:who_is_the_king_core/src/gamefield/objects/base/oriented_gamefield_object.dart';
+import 'package:who_is_the_king_core/who_is_the_king_core.dart';
 
-abstract class Character extends OrientedGamefieldObject {
-  Character({required super.position, required super.orientation});
+abstract class Character {
+  Character();
   String get name;
   int get hearts;
   int get multiAttackCost;

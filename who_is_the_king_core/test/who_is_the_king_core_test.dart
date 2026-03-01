@@ -1,11 +1,8 @@
 import 'dart:math';
 
 import 'package:who_is_the_king_core/src/gamefield/gamefield.dart';
-import 'package:who_is_the_king_core/src/gamefield/objects/base/character.dart';
 import 'package:who_is_the_king_core/src/gamefield/objects/base/gamefield_object.dart';
-import 'package:who_is_the_king_core/src/gamefield/objects/base/oriented_gamefield_object.dart';
 import 'package:who_is_the_king_core/src/gamefield/objects/brick.dart';
-import 'package:who_is_the_king_core/src/gamefield/objects/characters/kib.dart';
 import 'package:who_is_the_king_core/who_is_the_king_core.dart';
 import 'package:test/test.dart';
 
@@ -54,7 +51,6 @@ void main() {
       gf.addObj(Brick(position: Point(1, 6)));
       gf.addObj(Brick(position: Point(1, 7)));
       gf.addObj(Brick(position: Point(1, 8)));
-      gf.addObj(Kib(position: Point(0, 0), orientation: Orientation.north));
       _paintGamefield(gf);
     });
 
@@ -71,8 +67,6 @@ void _paintGamefield(Gamefield gamefield) {
       GamefieldObject? obj = gamefield.getObj(position: Point(x, y));
       if (obj == null) {
         line.write('• ');
-      } else if (obj is Character) {
-        line.write('${obj.name[0]} ');
       } else if (obj is Brick) {
         line.write('# ');
       }

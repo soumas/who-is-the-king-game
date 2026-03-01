@@ -8,8 +8,10 @@ environment:
 
 dependencies:
   flutter:
-    sdk: flutter
-  flame: ^1.35.1
+    sdk: flutter  
+  provider: ^6.1.5+1
+  who_is_the_king_core:
+    path: ../who_is_the_king_core
 
 dev_dependencies:
   flutter_test:
