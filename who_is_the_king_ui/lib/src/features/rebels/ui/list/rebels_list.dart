@@ -57,6 +57,7 @@ class RebelsListView extends StatelessWidget {
                   DamageAreaDisplay(damageArea: rebel.multiAttack.damageArea),
                 ],
               ),
+              SizedBox(height: 40),
             ],
           ),
         );
