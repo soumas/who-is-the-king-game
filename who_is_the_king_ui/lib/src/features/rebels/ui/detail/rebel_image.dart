@@ -46,8 +46,8 @@ class _RebelImageState extends State<RebelImage> {
   }
 
   String get _path =>
-      'images/rebels/${widget.rebel.runtimeType.toString().toLowerCase()}/${widget.rebel.runtimeType.toString().toLowerCase()}.avif';
+      'assets/images/rebels/${widget.rebel.runtimeType.toString().toLowerCase()}/${widget.rebel.runtimeType.toString().toLowerCase()}.avif';
 
   String get _pathBg =>
-      'images/rebels/${widget.rebel.runtimeType.toString().toLowerCase()}/${widget.rebel.runtimeType.toString().toLowerCase()}_bg.avif';
+      'assets/images/rebels/${widget.rebel.runtimeType.toString().toLowerCase()}/${widget.rebel.runtimeType.toString().toLowerCase()}_bg.avif';
 }

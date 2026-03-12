@@ -22,4 +22,33 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-    - assets/images/rebels/
+    - assets/images/rebels/air/
+    - assets/images/rebels/ben/
+    - assets/images/rebels/bobomp/
+    - assets/images/rebels/cris/
+    - assets/images/rebels/erick/
+    - assets/images/rebels/flowi/
+    - assets/images/rebels/gab/
+    - assets/images/rebels/glug/
+    - assets/images/rebels/harry/
+    - assets/images/rebels/kib/
+    - assets/images/rebels/klemens/
+    - assets/images/rebels/klomix/
+    - assets/images/rebels/koro/
+    - assets/images/rebels/lee/
+    - assets/images/rebels/lili/
+    - assets/images/rebels/mrfreeze/
+    - assets/images/rebels/parrow/
+    - assets/images/rebels/paul/
+    - assets/images/rebels/penpen/
+    - assets/images/rebels/phillip/
+    - assets/images/rebels/pill/
+    - assets/images/rebels/sarah/
+    - assets/images/rebels/star/
+    - assets/images/rebels/steve/
+    - assets/images/rebels/tillo/
+    - assets/images/rebels/tom/
+    - assets/images/rebels/toothi/
+    - assets/images/rebels/woki/
+    - assets/images/rebels/yingbum/
+    - assets/images/rebels/zok/
