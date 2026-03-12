@@ -7,15 +7,24 @@ class RebelsListState extends ValueNotifier<List<Character>> {
   void init() {
     value = [
       Air(),
+      Bobomp(),
       Cris(),
       Erick(),
+      Gab(),
       Glug(),
+      Harry(),
       Kib(),
       Klomix(),
+      Koro(),
       Lili(),
+      MrFreeze(),
+      Penpen(),
       Phillip(),
       Sarah(),
+      Star(),
       Steve(),
+      Tillo(),
+      Tom(),
       Zok(),
     ]..sort((a, b) => a.name.compareTo(b.name));
   }

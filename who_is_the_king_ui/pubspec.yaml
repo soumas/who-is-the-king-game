@@ -9,9 +9,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter  
-  provider: ^6.1.5+1
   who_is_the_king_core:
     path: ../who_is_the_king_core
+  provider: ^6.1.5+1
+  flutter_avif: ^3.1.0
 
 dev_dependencies:
   flutter_test:
@@ -21,4 +22,4 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-    - assets/images/
+    - assets/images/rebels/
