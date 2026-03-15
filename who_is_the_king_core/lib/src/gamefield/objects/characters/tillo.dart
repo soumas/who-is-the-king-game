@@ -16,14 +16,7 @@ class Tillo extends Character {
   @override
   DefaultAttack get defaultAttack => DefaultAttack(
     maxThrowingDistance: 1,
-    damageArea: [
-    const Point(0, 0),
-    const Point(0, -2),
-    ],
-
-
-
-
+    damageArea: [const Point(0, 0), const Point(0, -2)],
 
     canPenetrateWalls: false,
   );
@@ -31,10 +24,7 @@ class Tillo extends Character {
   @override
   MultiAttack get multiAttack => MultiAttack(
     maxThrowingDistance: 3,
-    damageArea: [
-      const Point(0, 0),
-      const Point(0, 1),
-    ],const Point(0, 2),
+    damageArea: [const Point(0, 0), const Point(0, 1), const Point(0, 2)],
     canPenetrateWalls: false,
     minMoveDistance: 0,
     maxMoveDistance: 0,
