@@ -3,13 +3,10 @@ import 'dart:math';
 import 'package:who_is_the_king_core/src/gamefield/gamefield.dart';
 import 'package:who_is_the_king_core/src/gamefield/objects/base/gamefield_object.dart';
 import 'package:who_is_the_king_core/src/gamefield/objects/brick.dart';
-import 'package:who_is_the_king_core/who_is_the_king_core.dart';
 import 'package:test/test.dart';
 
 void main() {
   group('A group of tests', () {
-    final awesome = Awesome();
-
     setUp(() {
       Gamefield gf = Gamefield(sizeX: 14, sizeY: 10);
       gf.addObj(Brick(position: Point(1, 1)));
@@ -54,9 +51,7 @@ void main() {
       _paintGamefield(gf);
     });
 
-    test('First Test', () {
-      expect(awesome.isAwesome, isTrue);
-    });
+    test('First Test', () {});
   });
 }
 
@@ -64,7 +59,7 @@ void _paintGamefield(Gamefield gamefield) {
   for (int y = gamefield.sizeY - 1; y >= 0; y--) {
     StringBuffer line = StringBuffer();
     for (int x = 0; x < gamefield.sizeX; x++) {
-      GamefieldObject? obj = gamefield.getObj(position: Point(x, y));
+      GamefieldObject? obj = gamefield.getObj(Point(x, y));
       if (obj == null) {
         line.write('• ');
       } else if (obj is Brick) {
