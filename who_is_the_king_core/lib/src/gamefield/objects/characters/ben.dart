@@ -3,15 +3,15 @@ import 'dart:math';
 import 'package:who_is_the_king_core/src/gamefield/objects/base/attack.dart';
 import 'package:who_is_the_king_core/src/gamefield/objects/base/character.dart';
 
-class Koro extends Character {
+class Ben extends Character {
   @override
-  String get name => 'KORO';
+  String get name => 'BEN';
 
   @override
-  int get hearts => 9;
+  int get hearts => 8;
 
   @override
-  int get multiAttackCost => 4;
+  int get multiAttackCost => 3;
 
   @override
   DefaultAttack get defaultAttack => DefaultAttack(
@@ -22,8 +22,11 @@ class Koro extends Character {
       const Point(-1, 0),
       const Point(1, 0),
       const Point(1, 1)
+      const Point(0, 0)
+      const Point(0, 1)
+      const Point(0, 2),
       const Point(1, 2),
-    ],
+     ],
 
 
 
@@ -39,19 +42,9 @@ class Koro extends Character {
       
       const Point(0, 0),
       const Point(0, 1),
-      const Point(0, 2),
-      const Point(1, -1),
-      const Point(2, -1),
-      const Point(3, -1),
-      const Point(0, -2),
-      const Point(0, -4),
-      const Point(0, -3),
-      const Point(-1, -1),
-      const Point(-2, -1),
-      const Point(-3, -1),
     ],
-    canPenetrateWalls: false,
-    minMoveDistance: 0,
-    maxMoveDistance: 0,
+    canPenetrateWalls: true,
+    minMoveDistance: 2,
+    maxMoveDistance: 2,
   );
 }
