@@ -5,7 +5,7 @@ import 'package:who_is_the_king_core/who_is_the_king_core.dart';
 class RebelImage extends StatefulWidget {
   const RebelImage({super.key, required this.rebel});
 
-  final Character rebel;
+  final Rebel rebel;
 
   @override
   State<RebelImage> createState() => _RebelImageState();
