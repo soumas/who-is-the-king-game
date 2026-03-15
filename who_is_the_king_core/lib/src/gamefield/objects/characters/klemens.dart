@@ -16,12 +16,7 @@ class Klemens extends Character {
   @override
   DefaultAttack get defaultAttack => DefaultAttack(
     maxThrowingDistance: 1,
-    damageArea: 
-    [
-     const Point(0, 0),
-     const Point(0, 1), 
-     const Point(0, 2), 
-     ]
+    damageArea: [const Point(0, 0), const Point(0, 1), const Point(0, 2)],
     canPenetrateWalls: false,
   );
 
@@ -33,8 +28,7 @@ class Klemens extends Character {
       const Point(-1, 0),
       const Point(1, 0),
       const Point(0, 1),
-      const Point(0,- 1),
-      
+      const Point(0, -1),
     ],
     canPenetrateWalls: true,
     minMoveDistance: 0,

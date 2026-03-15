@@ -21,16 +21,12 @@ class Ben extends Character {
       const Point(-1, 2),
       const Point(-1, 0),
       const Point(1, 0),
-      const Point(1, 1)
-      const Point(0, 0)
-      const Point(0, 1)
+      const Point(1, 1),
+      const Point(0, 0),
+      const Point(0, 1),
       const Point(0, 2),
       const Point(1, 2),
-     ],
-
-
-
-
+    ],
 
     canPenetrateWalls: false,
   );
@@ -38,11 +34,7 @@ class Ben extends Character {
   @override
   MultiAttack get multiAttack => MultiAttack(
     maxThrowingDistance: 1,
-    damageArea: [
-      
-      const Point(0, 0),
-      const Point(0, 1),
-    ],
+    damageArea: [const Point(0, 0), const Point(0, 1)],
     canPenetrateWalls: true,
     minMoveDistance: 2,
     maxMoveDistance: 2,

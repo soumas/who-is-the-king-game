@@ -16,13 +16,12 @@ class Yingbum extends Character {
   @override
   DefaultAttack get defaultAttack => DefaultAttack(
     maxThrowingDistance: 1,
-    damageArea: 
-    [
-     const Point(0, 0),
-     const Point(0, 1), 
-     const Point(0, 2), 
-     const Point(0, 3),
-     ]
+    damageArea: [
+      const Point(0, 0),
+      const Point(0, 1),
+      const Point(0, 2),
+      const Point(0, 3),
+    ],
     canPenetrateWalls: false,
   );
 
@@ -34,8 +33,7 @@ class Yingbum extends Character {
       const Point(-1, 0),
       const Point(1, 0),
       const Point(0, 1),
-      const Point(0,- 1),
-      
+      const Point(0, -1),
     ],
     canPenetrateWalls: true,
     minMoveDistance: 0,

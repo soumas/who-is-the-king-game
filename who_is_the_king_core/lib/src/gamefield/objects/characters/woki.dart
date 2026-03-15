@@ -16,7 +16,12 @@ class Woki extends Character {
   @override
   DefaultAttack get defaultAttack => DefaultAttack(
     maxThrowingDistance: 1,
-    damageArea: [const Point(0, 0), const Point(0, 1), const Point(0, 2), const Point(0, 3)]
+    damageArea: [
+      const Point(0, 0),
+      const Point(0, 1),
+      const Point(0, 2),
+      const Point(0, 3),
+    ],
     canPenetrateWalls: false,
   );
 

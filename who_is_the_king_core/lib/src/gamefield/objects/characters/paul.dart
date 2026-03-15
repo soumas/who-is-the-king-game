@@ -14,21 +14,16 @@ class Paul extends Character {
   int get multiAttackCost => 3;
 
   @override
-  DefaultAttack get defaultAttack => DefaultAttack
-  (maxThrowingDistance: 1,
-   damageArea:
-    [
-      const Point(0, 0),
-      const Point(-0, 1),
-      ]
-       canPenetrateWalls: false);
+  DefaultAttack get defaultAttack => DefaultAttack(
+    maxThrowingDistance: 1,
+    damageArea: [const Point(0, 0), const Point(-0, 1)],
+    canPenetrateWalls: false,
+  );
 
   @override
   MultiAttack get multiAttack => MultiAttack(
     maxThrowingDistance: 1,
-    damageArea: [
-    const Point(0, 0),
-    ]
+    damageArea: [const Point(0, 0)],
     canPenetrateWalls: true,
     minMoveDistance: 1,
     maxMoveDistance: 4,
