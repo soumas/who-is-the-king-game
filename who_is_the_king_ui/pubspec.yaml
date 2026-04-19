@@ -22,13 +22,14 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
+    - assets/images/
     - assets/images/rebels/air/
     - assets/images/rebels/ben/
     - assets/images/rebels/bobomp/
     - assets/images/rebels/cris/
     - assets/images/rebels/erick/
     - assets/images/rebels/flowi/
-    - assets/images/rebels/gab/
+    - assets/images/rebels/gab/ 
     - assets/images/rebels/glug/
     - assets/images/rebels/harry/
     - assets/images/rebels/kib/

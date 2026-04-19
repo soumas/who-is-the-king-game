@@ -2,8 +2,8 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:who_is_the_king_ui/src/features/rebels/ui/detail/rebel_image.dart';
-import 'package:who_is_the_king_ui/src/features/rebels/ui/list/rebels_list_state.dart';
+import 'package:who_is_the_king_ui/src/features/rebels/ui/rebel_image.dart';
+import 'package:who_is_the_king_ui/src/features/rebels/ui/rebels_list_state.dart';
 
 class RebelsList extends StatelessWidget {
   const RebelsList({super.key});
@@ -22,7 +22,7 @@ class RebelsListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final state = context.watch<RebelsListState>();
+    final state = context.read<RebelsListState>();
 
     return SizedBox(
       width: double.infinity,

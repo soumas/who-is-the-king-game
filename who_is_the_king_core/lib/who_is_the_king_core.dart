@@ -3,7 +3,9 @@
 /// More dartdocs go here.
 library;
 
-export 'src/gamefield/gamefield.dart' show Gamefield, kOffstagePosition;
+export 'src/maps/base/wtk_map.dart' show WtkMap;
+export 'src/maps/base/brick.dart' show Brick;
+export 'src/maps/dark_cellar.dart';
 export 'src/rebels/base/attack.dart';
 export 'src/rebels/base/rebel.dart';
 export 'src/rebels/air.dart';

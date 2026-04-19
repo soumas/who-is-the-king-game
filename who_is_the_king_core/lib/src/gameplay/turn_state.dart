@@ -1,4 +1,4 @@
-import 'package:who_is_the_king_core/src/gamefield/objects/base/oriented_gamefield_object.dart';
+import 'package:who_is_the_king_core/src/maps/base/oriented_map_object.dart';
 import 'package:who_is_the_king_core/who_is_the_king_core.dart';
 
 enum TurnPhase { diceRoll, move, attack }
