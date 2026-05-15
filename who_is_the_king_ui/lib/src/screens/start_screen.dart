@@ -1,5 +1,7 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
-import 'package:who_is_the_king_ui/src/screens/maps_list_screen.dart';
+import 'package:who_is_the_king_ui/src/features/maps/ui/maps_list.dart';
 import 'package:who_is_the_king_ui/src/screens/rebels_list_screen.dart';
 
 class StartScreen extends StatelessWidget {
@@ -45,11 +47,47 @@ class StartScreen extends StatelessWidget {
                 SizedBox(height: 10),
                 ElevatedButton(
                   onPressed: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (context) => const MapsListScreen(),
-                      ),
+                    showDialog(
+                      context: context,
+                      barrierColor: Colors.transparent,
+                      barrierDismissible: false,
+                      barrierLabel: 'Karten',
+                      builder: (context) {
+                        return BackdropFilter(
+                          filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
+                          child: Container(
+                            margin: const EdgeInsets.all(32.0),
+                            color: Colors.white.withAlpha(200),
+                            child: Column(
+                              children: [
+                                Row(
+                                  children: [
+                                    Text(
+                                      'Karten',
+                                      style: Theme.of(
+                                        context,
+                                      ).textTheme.headlineMedium,
+                                    ),
+                                    IconButton(
+                                      icon: Icon(Icons.close),
+                                      onPressed: () {
+                                        Navigator.of(context).pop();
+                                      },
+                                    ),
+                                  ],
+                                ),
+                                Expanded(child: const MapsList()),
+                              ],
+                            ),
+                          ),
+                        );
+                      },
                     );
+                    // Navigator.of(context).push(
+                    //   MaterialPageRoute(
+                    //     builder: (context) => const MapsListScreen(),
+                    //   ),
+                    // );
                   },
                   child: Text('Karten'),
                 ),

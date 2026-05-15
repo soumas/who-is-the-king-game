@@ -1,13 +1,13 @@
-/// Support for doing something awesome.
-///
-/// More dartdocs go here.
 library;
 
 export 'src/maps/base/wtk_map.dart' show WtkMap;
 export 'src/maps/base/brick.dart' show Brick;
 
+export 'src/maps/broom_closet.dart';
 export 'src/maps/dark_cellar.dart';
 export 'src/maps/kings_garden.dart';
+export 'src/maps/prison.dart';
+export 'src/maps/tournier__sqare.dart';
 
 export 'src/rebels/base/attack.dart';
 export 'src/rebels/base/rebel.dart';

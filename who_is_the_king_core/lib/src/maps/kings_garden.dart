@@ -1,12 +1,13 @@
 import 'dart:math';
 
-import 'package:who_is_the_king_core/src/maps/base/brick.dart';
 import 'package:who_is_the_king_core/src/maps/base/map_object.dart';
 import 'package:who_is_the_king_core/who_is_the_king_core.dart';
 
 class KingsGarden extends WtkMap {
   @override
-  String get name => 'King''s garden';
+  String get name =>
+      'King'
+      's garden';
 
   @override
   String get description =>
@@ -42,7 +43,7 @@ class KingsGarden extends WtkMap {
     Brick(position: Point(1, 14)),
     Brick(position: Point(1, 15)),
     Brick(position: Point(1, 16)),
-    Brick(position: Point(16, 1))
+    Brick(position: Point(16, 1)),
     Brick(position: Point(16, 2)),
     Brick(position: Point(16, 3)),
     Brick(position: Point(16, 4)),
@@ -106,7 +107,7 @@ class KingsGarden extends WtkMap {
     Brick(position: Point(14, 10)),
     Brick(position: Point(14, 11)),
     Brick(position: Point(14, 12)),
-    Brick(position: Point(14, 13)),
+    Brick(position: Point(14, 14)),
     Brick(position: Point(3, 14)),
     Brick(position: Point(4, 14)),
     Brick(position: Point(5, 14)),
@@ -165,12 +166,5 @@ class KingsGarden extends WtkMap {
     Brick(position: Point(7, 9)),
     Brick(position: Point(7, 8)),
     Brick(position: Point(7, 7)),
-
-
-
-
-
-
-
   ];
 }

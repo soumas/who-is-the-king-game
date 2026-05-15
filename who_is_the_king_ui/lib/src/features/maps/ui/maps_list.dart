@@ -21,44 +21,40 @@ class MapsListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final state = context.watch<MapsListState>();
-    return SizedBox(
-      width: double.infinity,
-      child: SingleChildScrollView(
-        child: Wrap(
-          children: state.value
-              .map(
-                (wtkMap) => Padding(
-                  padding: const EdgeInsets.only(left: 8.0, bottom: 4.0),
-                  child: Column(
+    return ListView(
+      children: state.value
+          .map(
+            (wtkMap) => Padding(
+              padding: const EdgeInsets.only(left: 8.0, bottom: 4.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            wtkMap.name,
-                            style: Theme.of(context).textTheme.titleLarge
-                                ?.copyWith(fontWeight: FontWeight.bold),
-                          ),
-                          Text(
-                            'Anzahl Spieler: ${wtkMap.numPlayersMin} - ${wtkMap.numPlayersMax}',
-                            style: Theme.of(context).textTheme.bodyMedium,
-                          ),
-                          Text(
-                            'Beschreibung: ${wtkMap.description}',
-                            style: Theme.of(context).textTheme.bodyMedium,
-                          ),
-                          MapPreview(map: wtkMap),
-                        ],
+                      Text(
+                        wtkMap.name,
+                        style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
-                      SizedBox(height: 40),
+                      Text(
+                        'Anzahl Spieler: ${wtkMap.numPlayersMin} - ${wtkMap.numPlayersMax}',
+                        style: Theme.of(context).textTheme.bodyMedium,
+                      ),
+                      Text(
+                        'Beschreibung: ${wtkMap.description}',
+                        style: Theme.of(context).textTheme.bodyMedium,
+                      ),
+                      MapPreview(map: wtkMap),
                     ],
                   ),
-                ),
-              )
-              .toList(),
-        ),
-      ),
+                  SizedBox(height: 40),
+                ],
+              ),
+            ),
+          )
+          .toList(),
     );
   }
 }

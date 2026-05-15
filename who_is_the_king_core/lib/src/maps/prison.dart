@@ -1,6 +1,5 @@
 import 'dart:math';
 
-import 'package:who_is_the_king_core/src/maps/base/brick.dart';
 import 'package:who_is_the_king_core/src/maps/base/map_object.dart';
 import 'package:who_is_the_king_core/who_is_the_king_core.dart';
 
@@ -78,7 +77,7 @@ class Prison extends WtkMap {
     Brick(position: Point(10, 7)),
     Brick(position: Point(10, 6)),
     Brick(position: Point(11, 6)),
-    Brick(position: Point(12, 6)).
+    Brick(position: Point(12, 6)),
     Brick(position: Point(13, 6)),
     Brick(position: Point(14, 6)),
     Brick(position: Point(14, 7)),
@@ -122,7 +121,7 @@ class Prison extends WtkMap {
     Brick(position: Point(6, 12)),
     Brick(position: Point(8, 12)),
     Brick(position: Point(10, 13)),
-    Brick(position: Point(10, 12)), 
+    Brick(position: Point(10, 12)),
     Brick(position: Point(11, 12)),
     Brick(position: Point(12, 12)),
     Brick(position: Point(13, 12)),
@@ -133,10 +132,10 @@ class Prison extends WtkMap {
     Brick(position: Point(14, 16)),
     Brick(position: Point(14, 17)),
     Brick(position: Point(14, 18)),
-    Brick(position: Point(13, 18)), 
+    Brick(position: Point(13, 18)),
     Brick(position: Point(12, 18)),
     Brick(position: Point(10, 15)),
     Brick(position: Point(10, 16)),
-    Brick(position: Point(10, 17)), 
+    Brick(position: Point(10, 17)),
   ];
 }

@@ -1,6 +1,5 @@
 import 'dart:math';
 
-import 'package:who_is_the_king_core/src/maps/base/brick.dart';
 import 'package:who_is_the_king_core/src/maps/base/map_object.dart';
 import 'package:who_is_the_king_core/who_is_the_king_core.dart';
 
@@ -37,5 +36,5 @@ class TournierSqare extends WtkMap {
     Brick(position: Point(7, 1)),
     Brick(position: Point(8, 2)),
     Brick(position: Point(9, 0)),
-  ]
+  ];
 }

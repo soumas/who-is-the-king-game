@@ -5,7 +5,12 @@ class MapsListState extends ValueNotifier<List<WtkMap>> {
   MapsListState() : super([]);
 
   void init() {
-    value = [DarkCellar(), DarkCellar(), DarkCellar(), DarkCellar()]
-      ..sort((a, b) => a.name.compareTo(b.name));
+    value = [
+      BroomCloset(),
+      DarkCellar(),
+      KingsGarden(),
+      Prison(),
+      TournierSqare(),
+    ]..sort((a, b) => a.name.compareTo(b.name));
   }
 }
