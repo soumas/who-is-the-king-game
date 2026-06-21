@@ -1,176 +1,124 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'package:who_is_the_king_ui/src/features/maps/ui/maps_list.dart';
+import 'package:go_router/go_router.dart';
+import 'package:provider/provider.dart';
+import 'package:who_is_the_king_ui/src/app_state.dart';
+import 'package:who_is_the_king_ui/src/common/widgets/wit_scaffold.dart';
+import 'package:who_is_the_king_ui/src/screens/about_screen.dart';
+import 'package:who_is_the_king_ui/src/screens/maps_list_screen.dart';
+import 'package:who_is_the_king_ui/src/screens/prepare_game_wizard_screen.dart';
 import 'package:who_is_the_king_ui/src/screens/rebels_list_screen.dart';
+import 'package:who_is_the_king_ui/src/screens/settings_screen.dart';
 
 class StartScreen extends StatelessWidget {
+  static String routePath = '/';
+
   const StartScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Stack(
-        children: [
-          Container(
-            decoration: const BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage('assets/images/start_bg.jpg'),
-                fit: BoxFit.cover,
+    return WitScaffold(
+      fullOpacityBackground: true,
+      body: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Text(
+              'Who is the King',
+              style: Theme.of(
+                context,
+              ).textTheme.displayLarge?.copyWith(color: Colors.white),
+              textAlign: TextAlign.center,
+            ),
+            SizedBox(height: 20),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 24.0),
+              child: Text(
+                'Es war einmal Glorisland, regiert von dem grausamen König Aarus, der sein Volk unterdrückte und töten ließ. Erick beschloss, ihn zu stürzen, und sammelte Rebellen um sich. Ihr erster Angriff auf die Burg scheiterte, doch mit Hilfe von Monstern wagten sie einen zweiten Versuch und besiegten den König. Danach brach jedoch Streit aus, wer nun herrschen sollte – und aus dem Sieg entstand ein neuer Kampf um die Macht.',
+                style: Theme.of(
+                  context,
+                ).textTheme.bodyLarge?.copyWith(color: Colors.white),
+                textAlign: TextAlign.center,
               ),
             ),
-          ),
-          Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text(
-                  'Who is the king?',
-                  style: TextStyle(
-                    fontSize: 44,
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                SizedBox(height: 20),
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (context) => const RebelsListScreen(),
-                      ),
-                    );
-                  },
-                  child: Text('Rebellen'),
-                ),
-                SizedBox(height: 10),
-                ElevatedButton(
-                  onPressed: () {
-                    showDialog(
-                      context: context,
-                      barrierColor: Colors.transparent,
-                      barrierDismissible: false,
-                      barrierLabel: 'Karten',
-                      builder: (context) {
-                        return BackdropFilter(
-                          filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
-                          child: Container(
-                            margin: const EdgeInsets.all(32.0),
-                            color: Colors.white.withAlpha(200),
-                            child: Column(
-                              children: [
-                                Row(
-                                  children: [
-                                    Text(
-                                      'Karten',
-                                      style: Theme.of(
-                                        context,
-                                      ).textTheme.headlineMedium,
-                                    ),
-                                    IconButton(
-                                      icon: Icon(Icons.close),
-                                      onPressed: () {
-                                        Navigator.of(context).pop();
-                                      },
-                                    ),
-                                  ],
-                                ),
-                                Expanded(child: const MapsList()),
-                              ],
-                            ),
-                          ),
-                        );
-                      },
-                    );
-                    // Navigator.of(context).push(
-                    //   MaterialPageRoute(
-                    //     builder: (context) => const MapsListScreen(),
-                    //   ),
-                    // );
-                  },
-                  child: Text('Karten'),
-                ),
-                SizedBox(height: 10),
-                ElevatedButton(
-                  onPressed: () {
-                    showGeneralDialog(
-                      context: context,
-                      pageBuilder: (context, animation, secondaryAnimation) {
-                        return AlertDialog(
-                          title: Text('Geschichte'),
-                          content: Text(
-                            'Es war einmal das Land Glorisland, regiert von dem grausamen König Aarus, der sein Volk unterdrückte und töten ließ. Erick beschloss, ihn zu stürzen, und sammelte Rebellen um sich. Ihr erster Angriff auf die Burg scheiterte, doch mit Hilfe von Monstern wagten sie einen zweiten Versuch und besiegten den König. Danach brach jedoch Streit aus, wer herrschen sollte – und aus dem Sieg entstand ein neuer Kampf um die Macht.',
-                          ),
-                          actions: [
-                            TextButton(
-                              onPressed: () {
-                                Navigator.of(context).pop();
-                              },
-                              child: Text('Schließen'),
-                            ),
-                          ],
-                        );
-                      },
-                    );
-                  },
-                  child: Text('Geschichte'),
-                ),
-                SizedBox(height: 10),
-                ElevatedButton(
-                  onPressed: () {
-                    showAboutDialog(
-                      context: context,
-                      applicationName: 'Who is the king?',
-                      applicationVersion: '1.0.0',
-                      applicationLegalese:
-                          '© 2024 Who is the king? All rights reserved.',
-                    );
-                  },
-                  child: Text('Über das Spiel'),
-                ),
-                SizedBox(height: 10),
-                ElevatedButton(
-                  onPressed: () {
-                    showGeneralDialog(
-                      context: context,
-                      pageBuilder: (context, animation, secondaryAnimation) {
-                        return AlertDialog(
-                          title: Text('Play'),
-                          content: Text('Start the game!'),
-                          actions: [
-                            TextButton(
-                              onPressed: () {
-                                Navigator.of(context).pop();
-                              },
-                              child: Text('Cancel'),
-                            ),
-                            TextButton(
-                              onPressed: () {
-                                // Start the game logic here
-                                Navigator.of(context).pop();
-                              },
-                              child: Text('Start'),
-                            ),
-                          ],
-                        );
-                      },
-                    );
-                  },
-                  child: Text('Spiel starten'),
-                ),
-              ],
+            SizedBox(height: 20),
+            ListTile(
+              tileColor: Colors.black.withAlpha(128),
+              title: Text(
+                'Neues Spiel',
+                style: Theme.of(
+                  context,
+                ).textTheme.titleLarge?.copyWith(color: Colors.white),
+                textAlign: TextAlign.center,
+              ),
+              trailing: Icon(Icons.chevron_right, color: Colors.white),
+              onTap: () {
+                context.push(PrepareGameWizardScreen.routePath);
+              },
             ),
-          ),
-          // Positioned(
-          //   left: 20,
-          //   top: 20,
-          //   child: AvifImage.asset(
-          //     'assets/images/start_witk_logo.avif',
-          //     width: 250,
-          //   ),
-          // ),
-        ],
+            SizedBox(height: 20),
+            ListTile(
+              tileColor: Colors.black.withAlpha(128),
+              title: Text(
+                'Die Rebellen',
+                style: Theme.of(
+                  context,
+                ).textTheme.titleLarge?.copyWith(color: Colors.white),
+                textAlign: TextAlign.center,
+              ),
+              trailing: Icon(Icons.chevron_right, color: Colors.white),
+              onTap: () {
+                context.push(RebelsListScreen.routePath);
+              },
+            ),
+            SizedBox(height: 4),
+            ListTile(
+              tileColor: Colors.black.withAlpha(128),
+              title: Text(
+                'Schlachtfelder',
+                style: Theme.of(
+                  context,
+                ).textTheme.titleLarge?.copyWith(color: Colors.white),
+                textAlign: TextAlign.center,
+              ),
+              trailing: Icon(Icons.chevron_right, color: Colors.white),
+              onTap: () {
+                context.push(MapsListScreen.routePath);
+              },
+            ),
+            SizedBox(height: 20),
+            ListTile(
+              tileColor: Colors.black.withAlpha(128),
+              title: Text(
+                'Einstellungen',
+                style: Theme.of(
+                  context,
+                ).textTheme.titleLarge?.copyWith(color: Colors.white),
+                textAlign: TextAlign.center,
+              ),
+              trailing: Icon(Icons.chevron_right, color: Colors.white),
+              onTap: () {
+                context.push(SettingsScreen.routePath);
+              },
+            ),
+            SizedBox(height: 4),
+            ListTile(
+              tileColor: Colors.black.withAlpha(128),
+              title: Text(
+                'Über das Spiel',
+                style: Theme.of(
+                  context,
+                ).textTheme.titleLarge?.copyWith(color: Colors.white),
+                textAlign: TextAlign.center,
+              ),
+              trailing: Icon(Icons.chevron_right, color: Colors.white),
+              onTap: () {
+                context.push(AboutScreen.routePath);
+              },
+            ),
+            SizedBox(height: 20),
+          ],
+        ),
       ),
     );
   }

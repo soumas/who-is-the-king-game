@@ -1,7 +1,9 @@
 library;
 
-export 'src/maps/base/wtk_map.dart' show WtkMap;
-export 'src/maps/base/brick.dart' show Brick;
+export 'src/maps/base/wtk_map.dart';
+export 'src/maps/base/brick.dart';
+
+export 'src/gameplay/player_state.dart';
 
 export 'src/maps/broom_closet.dart';
 export 'src/maps/dark_cellar.dart';
