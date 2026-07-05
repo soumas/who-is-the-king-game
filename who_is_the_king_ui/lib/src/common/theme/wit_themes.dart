@@ -20,6 +20,12 @@ ThemeData buildThemeData(Brightness brightness, WitColors c) {
     textTheme: GoogleFonts.newRockerTextTheme(
       ThemeData(brightness: brightness).textTheme,
     ),
+    listTileTheme: ListTileThemeData(tileColor: c.listTileBg),
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ButtonStyle(
+        backgroundColor: WidgetStateProperty.all(Colors.black.withAlpha(164)),
+      ),
+    ),
   );
 }
 

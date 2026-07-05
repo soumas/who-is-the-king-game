@@ -2,6 +2,28 @@ import 'package:flutter/material.dart';
 import 'package:flutter_avif/flutter_avif.dart';
 import 'package:who_is_the_king_core/who_is_the_king_core.dart';
 
+class StaticRebelImage extends StatelessWidget {
+  const StaticRebelImage({super.key, required this.rebel});
+
+  final Rebel rebel;
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      children: [
+        AvifImage.asset(
+          'assets/images/rebels/${rebel.runtimeType.toString().toLowerCase()}/${rebel.runtimeType.toString().toLowerCase()}_bg.avif',
+          fit: BoxFit.contain,
+        ),
+        AvifImage.asset(
+          'assets/images/rebels/${rebel.runtimeType.toString().toLowerCase()}/${rebel.runtimeType.toString().toLowerCase()}.avif',
+          fit: BoxFit.contain,
+        ),
+      ],
+    );
+  }
+}
+
 class RebelImage extends StatefulWidget {
   const RebelImage({super.key, required this.rebel});
 
