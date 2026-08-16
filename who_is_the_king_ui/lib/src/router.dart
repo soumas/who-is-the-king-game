@@ -1,5 +1,7 @@
 import 'package:go_router/go_router.dart';
+import 'package:who_is_the_king_ui/src/features/gameplay/domain/game_play_config.dart';
 import 'package:who_is_the_king_ui/src/screens/about_screen.dart';
+import 'package:who_is_the_king_ui/src/screens/gameplay_screen.dart';
 import 'package:who_is_the_king_ui/src/screens/maps_list_screen.dart';
 import 'package:who_is_the_king_ui/src/screens/prepare_game_wizard_screen.dart';
 import 'package:who_is_the_king_ui/src/screens/rebels_list_screen.dart';
@@ -37,6 +39,13 @@ final GoRouter router = GoRouter(
     GoRoute(
       path: StoryScreen.routePath,
       builder: (context, state) => const StoryScreen(),
+    ),
+    GoRoute(
+      path: GameplayScreen.routePath,
+      builder: (context, state) {
+        final config = state.extra as GamePlayConfig;
+        return GameplayScreen(config: config);
+      },
     ),
   ],
 );

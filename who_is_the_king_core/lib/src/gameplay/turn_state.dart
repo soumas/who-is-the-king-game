@@ -4,7 +4,7 @@ import 'package:who_is_the_king_core/who_is_the_king_core.dart';
 enum TurnPhase { diceRoll, move, attack }
 
 class TurnState {
-  late Rebel rebel;
+  late PlayerState player;
   TurnPhase phase = TurnPhase.diceRoll;
   int? diceRollResult;
   late List<Orientation> movedSteps = [];

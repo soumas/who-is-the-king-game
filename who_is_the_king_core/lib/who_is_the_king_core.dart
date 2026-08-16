@@ -4,6 +4,7 @@ export 'src/maps/base/wtk_map.dart';
 export 'src/maps/base/brick.dart';
 
 export 'src/gameplay/player_state.dart';
+export 'src/gameplay/game_controller.dart';
 
 export 'src/maps/broom_closet.dart';
 export 'src/maps/dark_cellar.dart';
